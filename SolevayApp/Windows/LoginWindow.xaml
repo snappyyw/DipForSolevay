@@ -1,0 +1,21 @@
+﻿<Window x:Class="SolevayApp.Windows.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SolevayApp.Windows"
+        mc:Ignorable="d"
+        Title="Окно логина" Height="450" Width="800">
+    <Grid>
+        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Center" Height="68" Margin="0,-1,0,0" VerticalAlignment="Top" Width="799" Background="#FFE1F0FF">
+            <Label Content="Автоматизация рабочего места отдела кадров" HorizontalAlignment="Center" Margin="0,9,0,0" VerticalAlignment="Top" FontSize="24"/>
+        </Border>
+        <Button Content="Войти" HorizontalAlignment="Left" Margin="528,356,0,0" VerticalAlignment="Top" Height="51" Width="262" Background="#FF546B82" Foreground="White" BorderBrush="{x:Null}" Opacity="0.995" FontSize="20" Click="Button_Click1"/>
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="10,356,0,0" VerticalAlignment="Top" Height="51" Width="262" Background="#FF546B82" Foreground="White" BorderBrush="{x:Null}" Opacity="0.995" FontSize="20" Click="Button_Click"/>
+        <TextBox x:Name="Login" HorizontalAlignment="Left" Margin="239,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="298" Height="38" FontSize="14"/>
+        <Label Content="Логин" HorizontalAlignment="Left" Margin="239,113,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <PasswordBox x:Name="Password" HorizontalAlignment="Left" Margin="239,232,0,0" VerticalAlignment="Top" Width="298" Height="38" FontSize="14"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="239,0,0,0" VerticalAlignment="Center" FontSize="14"/>
+
+    </Grid>
+</Window>
