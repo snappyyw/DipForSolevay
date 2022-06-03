@@ -22,6 +22,9 @@ namespace SolevayApp.Windows
     {
         DatabaseEntities databaseEntities = new DatabaseEntities();
         User user;
+
+        // Событие инициализации окна
+
         public UserWindow(User _user)
         {
             InitializeComponent();
@@ -33,6 +36,8 @@ namespace SolevayApp.Windows
             user = _user;
         }
 
+        // Кнопка открытия нового окна
+
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
@@ -40,11 +45,15 @@ namespace SolevayApp.Windows
             this.Close();
         }
 
+        // Кнопка открытия нового окна
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddDateWindow addDateWindow = new AddDateWindow("Vacation", user.id);
             addDateWindow.Show();
         }
+
+        // Кнопка удаления данных
 
         private void Button_Click2(object sender, RoutedEventArgs e)
         {
@@ -64,6 +73,8 @@ namespace SolevayApp.Windows
             }
         }
 
+        // Кнопка обновления данных
+
         private void Button_Click4(object sender, RoutedEventArgs e)
         {
             databaseEntities.ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
@@ -71,6 +82,9 @@ namespace SolevayApp.Windows
             dateGrid2.ItemsSource = databaseEntities.SickDay.Where(v => v.user_id == user.id).ToList();
             dateGrid3.ItemsSource = databaseEntities.ProfessionalDevelopment.Where(v => v.user_id == user.id).ToList();
         }
+
+
+        // Кнопка удаления данных
 
         private void Button_Click3(object sender, RoutedEventArgs e)
         {
@@ -92,17 +106,23 @@ namespace SolevayApp.Windows
             }
         }
 
+        // Кнопка открытия нового окна
+
         private void Button_Click5(object sender, RoutedEventArgs e)
         {
             AddDateWindowFull addDateWindowFull = new AddDateWindowFull( user.id);
             addDateWindowFull.Show();
         }
 
+        // Кнопка открытия нового окна
+
         private void Button_Click6(object sender, RoutedEventArgs e)
         {
             AddDateWindow addDateWindow = new AddDateWindow("ProfessionalDevelopment", user.id);
             addDateWindow.Show();
         }
+
+        // Кнопка удаления данных
 
         private void Button_Click7(object sender, RoutedEventArgs e)
         {

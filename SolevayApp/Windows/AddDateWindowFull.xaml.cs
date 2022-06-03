@@ -22,11 +22,15 @@ namespace SolevayApp.Windows
     {
         DatabaseEntities databaseEntities = new DatabaseEntities();
         int user_id;
+
+        // Событие инициализации окна
         public AddDateWindowFull(int _user_id)
         {
             InitializeComponent();
             user_id = _user_id;
         }
+
+        // Кнопка сохранения
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -51,6 +55,8 @@ namespace SolevayApp.Windows
                 }
             }
         }
+
+        // Вспомогательная функция валидации данных
 
         private bool isChecked()
         {

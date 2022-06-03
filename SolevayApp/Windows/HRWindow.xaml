@@ -32,7 +32,7 @@
                 <Grid Background="#FFE5E5E5">
                     <DataGrid x:Name="dateGrid2" Margin="0,0,202,0" AutoGenerateColumns="false">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Пользователь" Binding="{Binding user_id.FIO}" Width="*" />
+                            <DataGridTextColumn Header="Пользователь" Binding="{Binding User.FIO}" Width="*" />
                             <DataGridTextColumn Header="Статус" Binding="{Binding is_active}" Width="*" />
                             <DataGridTextColumn Header="Дата начала" Binding="{Binding start_date}" Width="*" />
                             <DataGridTextColumn Header="Дата конца" Binding="{Binding end_date}" Width="*" />

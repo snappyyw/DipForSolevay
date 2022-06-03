@@ -12,6 +12,10 @@ namespace Dip.Model
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+
+    /// <summary>
+    /// Модель для работы с БД
+    /// </summary>
     
     public partial class DatabaseEntities : DbContext
     {

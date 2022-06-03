@@ -24,12 +24,17 @@ namespace SolevayApp.Windows
 
         int user_id;
         string type;
+
+        // Событие инициализации окна
+
         public AddDateWindow(string _type, int _user_id)
         {
             InitializeComponent();
             user_id = _user_id;
             type = _type;
         }
+
+        // Кнопка сохранения
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -75,6 +80,8 @@ namespace SolevayApp.Windows
             }
 
         }
+
+        // Вспомогательная функция валидации данных
 
         private bool isChecked()
         {

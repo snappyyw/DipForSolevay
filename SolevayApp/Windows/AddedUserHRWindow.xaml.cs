@@ -22,10 +22,15 @@ namespace SolevayApp.Windows
     {
         DatabaseEntities databaseEntities = new DatabaseEntities();
         User user = new User();
+
+        // Событие инициализации окна для добавления
+
         public AddedUserHRWindow()
         {
             InitializeComponent();
         }
+
+        // Событие инициализации окна для изменения
 
         public AddedUserHRWindow(User _user)
         {
@@ -36,6 +41,8 @@ namespace SolevayApp.Windows
             Login.Text = _user.login;
             user = _user;
         }
+
+        // Вспомогательная функция валидации данных
 
         private bool isChecked()
         {
@@ -67,14 +74,18 @@ namespace SolevayApp.Windows
             }
         }
 
+        // Кнопка сохранения/изменения
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (isChecked())
             {
                 try
                 {
+
                     if (user.id != 0)
                     {
+                        // Изменение
                         User userCurrent = databaseEntities.User.FirstOrDefault(u => u.id == user.id);
                         userCurrent.FIO = FIO.Text;
                         userCurrent.password = Password.Password;
@@ -84,6 +95,7 @@ namespace SolevayApp.Windows
                     }
                     else
                     {
+                        // Добавление 
                         User user = new User();
                         user.FIO = FIO.Text;
                         user.password = Password.Password;

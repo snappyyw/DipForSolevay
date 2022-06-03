@@ -21,6 +21,9 @@ namespace SolevayApp.Windows
     public partial class HRWindow : Window
     {
         DatabaseEntities databaseEntities = new DatabaseEntities();
+
+        // Событие инициализации окна
+
         public HRWindow(User _user)
         {
             InitializeComponent();
@@ -30,6 +33,8 @@ namespace SolevayApp.Windows
             dateGrid4.ItemsSource = databaseEntities.ProfessionalDevelopment.ToList();
             lable.Content = "Привет " + _user.login;
         }
+
+        // Кнопка обновления данных
 
         private void Button_Click3(object sender, RoutedEventArgs e)
         {
@@ -83,6 +88,8 @@ namespace SolevayApp.Windows
             }
         }
 
+        // Кнопка удаления данных
+
         private void Button_Click5(object sender, RoutedEventArgs e)
         {
             if (dateGrid2.SelectedItems.Count == 1)
@@ -133,6 +140,8 @@ namespace SolevayApp.Windows
             }
         }
 
+        // Кнопка удаления данных
+
         private void Button_Click8(object sender, RoutedEventArgs e)
         {
             if (dateGrid3.SelectedItems.Count == 1)
@@ -152,6 +161,8 @@ namespace SolevayApp.Windows
                 }
             }
         }
+
+        // Кнопка удаления данных
 
         private void Button_Click9(object sender, RoutedEventArgs e)
         {

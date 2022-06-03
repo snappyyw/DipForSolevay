@@ -22,10 +22,15 @@ namespace SolevayApp.Windows
     {
         DatabaseEntities databaseEntities = new DatabaseEntities();
         User user;
+
+        // Событие инициализации окна
+
         public InfoUserWindow(User _user)
         {
             InitializeComponent();
             LableName.Content = "Пользователь " + _user.FIO;
+
+            // Поиск пользователя
             PersonalDate personalDate = databaseEntities.PersonalDate.FirstOrDefault(p=>p.user_id == _user.id);
             if(personalDate != null)
             {
@@ -36,6 +41,8 @@ namespace SolevayApp.Windows
             }
             user = _user;
         }
+
+        // Вспомогательная функция валидации данных
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

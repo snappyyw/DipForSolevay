@@ -33,10 +33,15 @@ namespace SolevayApp.Windows
             this.Close();
         }
 
+        // Кнопка авторизации
+
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
             if (isChecked())
             {
+
+                // Поиск пользователя и открытие окна
+
                 User user = databaseEntities.User.FirstOrDefault(u => u.login == Login.Text && u.password == Password.Password);
                 if (user != null)
                 {
@@ -65,6 +70,8 @@ namespace SolevayApp.Windows
                 }
             }
         }
+
+        // Вспомогательная функция валидации данных
 
         private bool isChecked()
         {

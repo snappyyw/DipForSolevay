@@ -21,12 +21,17 @@ namespace SolevayApp.Windows
     public partial class AdminWindow : Window
     {
         DatabaseEntities databaseEntities = new DatabaseEntities();
+
+        // Событие инициализации окна
+
         public AdminWindow(User _user)
         {
             InitializeComponent();
             dateGrid1.ItemsSource = databaseEntities.User.Where(u=>u.role != "Админ").ToList();
             lable.Content = "Привет " + _user.login;
         }
+
+        // Кнопка открытия нового окна
 
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
@@ -41,11 +46,15 @@ namespace SolevayApp.Windows
             addedUserAdminWindow.Show();
         }
 
+        // Кнопка обновления данных
+
         private void Button_Click3(object sender, RoutedEventArgs e)
         {
             databaseEntities.ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             dateGrid1.ItemsSource = databaseEntities.User.Where(u => u.role != "Админ").ToList();
         }
+
+        // Кнопка удаления данных
 
         private void Button_Click4(object sender, RoutedEventArgs e)
         {
@@ -66,6 +75,8 @@ namespace SolevayApp.Windows
                 }
             }
         }
+
+        // Кнопка открытия нового окна
 
         private void Button_Click2(object sender, RoutedEventArgs e)
         {

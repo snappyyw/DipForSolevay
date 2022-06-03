@@ -23,12 +23,16 @@ namespace SolevayApp.Windows
         DatabaseEntities databaseEntities = new DatabaseEntities();
         int id;
         string type;
+
+        // Событие инициализации окна
         public AcceptDateWindow(int _id, string _type)
         {
             InitializeComponent();
             id = _id;
             type = _type;
         }
+
+        // Вспомогательная функция валидации данных
 
         private bool isChecked()
         {
@@ -50,6 +54,8 @@ namespace SolevayApp.Windows
             }
         }
 
+
+        // Кнопка сохранения
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (isChecked())

@@ -33,6 +33,8 @@ namespace SolevayApp.Windows
             this.Close();
         }
 
+        // Кнопка создание аккаунта
+
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
             try
@@ -58,6 +60,9 @@ namespace SolevayApp.Windows
                 MessageBox.Show(ex.Message,"Внимание!");
             }
         }
+
+
+        // Вспомогательная функция валидации данных
 
         private bool isChecked()
         {

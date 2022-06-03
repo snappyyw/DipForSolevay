@@ -23,9 +23,15 @@ namespace SolevayApp
     public partial class MainWindow : Window
     {
         DatabaseEntities databaseEntities = new DatabaseEntities();
+
+        // Событие инициализации окна
+
         public MainWindow()
         {
             InitializeComponent();
+
+
+            // Создание админа если его нет
 
             User user = databaseEntities.User.FirstOrDefault(u => u.login == "Admin123");
             if (user == null)
